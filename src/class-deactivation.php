@@ -13,7 +13,7 @@ namespace InactiveAccount;
 /**
  * Deactivation class.
  *
- * @since   0.1
+ * @since   0.1.0
  *
  * @package InactiveAccount
  * @author  Lisa Schuyler
@@ -22,15 +22,15 @@ class Deactivation {
 	/**
 	 * Static method that is called on plugin deactivation.
 	 *
-	 * @since 0.1
+	 * @since 0.1.0
 	 *
 	 * @var self
 	 */
 	public static function deactivate() {
 
 		// remove the scheduled jobs
-		wp_clear_scheduled_hook('flag_inactive_accounts');
-		wp_clear_scheduled_hook('onetime_90day_mark_inactive');
+		wp_clear_scheduled_hook( 'flag_inactive_accounts' );
+		wp_clear_scheduled_hook( 'onetime_90day_mark_inactive' );
 
 	}
 }
