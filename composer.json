@@ -1,0 +1,30 @@
+{
+  "name": "vendor_name/public",
+  "description": "Inactive Account Lockdown",
+  "minimum-stability": "dev",
+  "keywords": [
+          "plugin",
+          "inactive-account-lockdown"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Lisa Schuyler",
+      "homepage": "https://lschuyler.dev",
+      "role": "Developer"
+    }
+  ],
+  "require-dev": {
+    "automattic/vipwpcs": "^2.3",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "phpcompatibility/phpcompatibility-wp": "^2",
+    "phpunit/phpunit": "^9",
+    "wp-coding-standards/wpcs": "^2"
+  },
+  "require": {
+    "squizlabs/php_codesniffer": ">=3.6.2",
+    "php": "^7.4 || ^8"
+  },
+  "prefer-stable": true,
+  "standard":".phpcs.xml.dist"
+}
