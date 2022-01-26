@@ -2,10 +2,10 @@
 /**
  * On plugin activation, adds the 'inactive' role, and schedules two cron jobs.
  *
- * @package     InactiveAccount
- * @author      Lisa Schuyler
- * @copyright   2022 Lisa Schuyler
- * @license     GPL-2.0-or-later
+ * @package   InactiveAccount
+ * @author    Lisa Schuyler
+ * @copyright 2022 Lisa Schuyler
+ * @license   GPL-2.0-or-later
  */
 
 namespace InactiveAccount;
