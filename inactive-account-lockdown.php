@@ -32,22 +32,22 @@ register_deactivation_hook( __FILE__, function () {
 } );
 
 // calculate the timestamp for the offset
-require plugin_dir_path( __FILE__ ) . 'includes/class-calculate-offset.php';
+require plugin_dir_path( __FILE__ ) . 'src/class-calculate-offset.php';
 
 /**
  * Contains the scheduled tasks and their queries.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-scheduled-jobs.php';
+require plugin_dir_path( __FILE__ ) . 'src/class-scheduled-jobs.php';
 
 /**
  * Prevent an inactive user from logging in.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-login-check.php';
+require plugin_dir_path( __FILE__ ) . 'src/class-login-check.php';
 
 /**
  * Update last_login timestamp in user meta_data when a user logs in.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-login-update.php';
+require plugin_dir_path( __FILE__ ) . 'src/class-login-update.php';
 
 add_filter( 'authenticate', array( 'InactiveAccount\Login_Check', 'check_for_inactive' ), 30, 3 );
 
