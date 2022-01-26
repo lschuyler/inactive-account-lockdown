@@ -3,7 +3,7 @@
  * Inactive Account Lockdown
  *
  * @package     InactiveAccount
- * @author      Lisa Schuyler
+ * @author      Lisa Schuyler <lisa@schuyler.ca>
  * @copyright   2022 Lisa Schuyler
  * @license     GPL-2.0-or-later
  *
