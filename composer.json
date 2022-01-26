@@ -26,5 +26,10 @@
     "php": "^7.4 || ^8"
   },
   "prefer-stable": true,
-  "standard":".phpcs.xml.dist"
+  "standard":".phpcs.xml.dist",
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }
