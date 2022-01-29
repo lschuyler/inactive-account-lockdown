@@ -20,7 +20,7 @@
 	<arg value="sp"/> <!-- Show sniff and progress -->
 	<arg name="colors"/> <!-- Show results with colors. Disable if working on Windows -->
 	<arg name="basepath" value="."/> <!-- Strip the file paths down to the relevant bit -->
-	<arg name="parallel" value="8"/> <!-- Enables parallel processing when available for faster results -->
+	<arg name="parallel" value="20"/> <!-- Enables parallel processing when available for faster results -->
 	<arg name="extensions" value="php,js"/> <!-- Limit to PHP and JS files -->
 
 	<!-- Rules: Check PHP version compatibility - see
@@ -43,5 +43,37 @@
 	<!-- For help in understanding this minimum_supported_wp_version:
 		https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#setting-minimum-supported-wp-version-for-all-sniffs-in-one-go-wpcs-0140 -->
 	<config name="minimum_supported_wp_version" value="5.8.2"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="inactive-account-lockdown"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="170"/>
+			<property name="absoluteLineLimit" value="0"/>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- For help in understanding this text_domain property:
+    https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki/Customizable-sniff-properties#internationalization-setting-your-text-domain -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+    	<properties>
+    		<property name="prefixes" type="array">
+    			<element value="inactive-account-lockdown"/>
+    			<element value="InactiveAccount"/>
+    		</property>
+    	</properties>
+    </rule>
 
 </ruleset>
