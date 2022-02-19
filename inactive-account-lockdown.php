@@ -52,4 +52,4 @@ require plugin_dir_path( __FILE__ ) . 'src/class-login-update.php';
 // priority needs to be 20 or more. wp_authenticate_username_password() runs on priority 20. May change in future: https://core.trac.wordpress.org/ticket/46748.
 add_filter( 'authenticate', array( 'InactiveAccount\Login_Check', 'check_for_inactive' ), 20, 3 );
 
-add_action( 'wp_login', array( 'InactiveAccount\Login_Update', 'update_last_login' ), 10, 2 );
+add_action( 'wp_login', array( InactiveAccount\Login_Update::class, 'update_last_login' ), 10, 2 );
