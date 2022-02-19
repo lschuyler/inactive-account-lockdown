@@ -31,22 +31,9 @@ register_deactivation_hook( __FILE__, function () {
 	InactiveAccount\Deactivation::deactivate();
 } );
 
-// calculate the timestamp for the offset
 require plugin_dir_path( __FILE__ ) . 'src/class-calculate-offset.php';
-
-/**
- * Contains the scheduled tasks and their queries.
- */
 require plugin_dir_path( __FILE__ ) . 'src/class-scheduled-jobs.php';
-
-/**
- * Prevent an inactive user from logging in.
- */
 require plugin_dir_path( __FILE__ ) . 'src/class-login-check.php';
-
-/**
- * Update last_login timestamp in user meta_data when a user logs in.
- */
 require plugin_dir_path( __FILE__ ) . 'src/class-login-update.php';
 
 // priority needs to be 20 or more. wp_authenticate_username_password() runs on priority 20. May change in future: https://core.trac.wordpress.org/ticket/46748.
