@@ -17,7 +17,7 @@
  * Text Domain:     inactive-account-lockdown
  * License:         GPL v2 or later
  * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
- * Requires PHP:    5.3
+ * Requires PHP:    7.1
  * Requires WP:     5.2
  */
 
