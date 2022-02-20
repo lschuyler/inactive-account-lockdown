@@ -34,21 +34,18 @@ class Calculate_Offset {
 	 *
 	 * Determine if we want a timestamp in the past or in the future.
 	 *
-	 * @since 0.1.0
-	 *
 	 * @param boolean $future Optional. Default true.
 	 *
 	 * @return int
+	 * @since 0.1.0
 	 */
-	public function get_cutoff_timestamp( $future = 'true' ): int {
-
+	public function get_cutoff_timestamp( bool $future = true ): int {
 		$current_time     = time();
 		$offset_timestamp = self::CUT_OFF_DAYS * 24 * 60 * 60;
-		if ( $future == 'true' ) {
+		if ( $future ) {
 			return $current_time + $offset_timestamp;
 		} else {
 			return $current_time - $offset_timestamp;
 		}
-
 	}
 }
