@@ -38,9 +38,9 @@ class Calculate_Offset {
 	 *
 	 * @param boolean $future Optional. Default true.
 	 *
-	 * @return float|int
+	 * @return int
 	 */
-	public function get_cutoff_timestamp( $future = 'true' ) {
+	public function get_cutoff_timestamp( $future = 'true' ): int {
 
 		$current_time     = time();
 		$offset_timestamp = self::CUT_OFF_DAYS * 24 * 60 * 60;
