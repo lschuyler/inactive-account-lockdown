@@ -24,12 +24,19 @@ class Calculate_Offset {
 	 * Declare constants.
 	 *
 	 * @since 0.1.0
+	 *
 	 * @var int $cut_off_days Represents days until marked inactive.
 	 */
 	private const CUT_OFF_DAYS = 90;
 
 	/**
-	 * @param boolean $future Indicates if we want a timestamp in the past or in the future.
+	 * Set timestamp cutoff.
+	 *
+	 * Determine if we want a timestamp in the past or in the future.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @param boolean $future Optional. Default true.
 	 *
 	 * @return float|int
 	 */
