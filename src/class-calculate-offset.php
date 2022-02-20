@@ -21,9 +21,12 @@ namespace InactiveAccount;
 class Calculate_Offset {
 
 	/**
+	 * Declare constants.
+	 *
+	 * @since 0.1.0
 	 * @var int $cut_off_days Represents days until marked inactive.
 	 */
-	var int $cut_off_days = 90;
+	private const CUT_OFF_DAYS = 90;
 
 	/**
 	 * @param boolean $future Indicates if we want a timestamp in the past or in the future.
@@ -33,7 +36,7 @@ class Calculate_Offset {
 	public function get_cutoff_timestamp( $future = 'true' ) {
 
 		$current_time     = time();
-		$offset_timestamp = $this->cut_off_days * 24 * 60 * 60;
+		$offset_timestamp = self::CUT_OFF_DAYS * 24 * 60 * 60;
 		if ( $future == 'true' ) {
 			return $current_time + $offset_timestamp;
 		} else {
