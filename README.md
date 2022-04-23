@@ -5,7 +5,7 @@
 * Version: 0.1.0
 * Tested up to: 5.8.3
 * Requires at least: 5.2
-* Requires PHP: 5.3
+* Requires PHP: 7.4
 * License: GPLv2 or later
 
 This plugin prevents any user from logging in if they haven't logged in during the previous 90 days.
