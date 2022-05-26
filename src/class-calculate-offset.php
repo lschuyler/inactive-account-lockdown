@@ -11,14 +11,44 @@
 namespace InactiveAccount;
 
 /**
+ * Declare the interface RightNow.
+ *
+ * RightNowTimestamp represents the current timestamp, but in an interface for dependency injection.
+ *
+ * @since 0.1.0
+ */
+interface RightNow {
+	/**
+	 * Retrieves the current time as a timestamp.
+	 *
+	 * @return int
+	 */
+	public function time(): int;
+}
+
+/**
  * Calculate the 90 day offset, either in the past or future.
  *
  * @since   0.1.0
  *
  * @package InactiveAccount
  * @author  Lisa Schuyler
+ *
+ * @var right_now
  */
-class Calculate_Offset {
+class Calculate_Offset implements RightNow {
+	protected int $right_now;
+
+	/**
+	 * Retrieves the current time as a timestamp, using the RightNow interface.
+	 *
+	 * @return int
+	 */
+
+
+	public function time(): int {
+		return $this->right_now;
+	}
 
 	/**
 	 * Declare constants.
@@ -42,7 +72,7 @@ class Calculate_Offset {
 	public function get_cutoff_timestamp( bool $future = true ): int {
 		$current_time     = time();
 		$offset_timestamp = self::CUT_OFF_DAYS * 24 * 60 * 60;
-		if ( $future ) {
+		if ( 'true' === $future ) {
 			return $current_time + $offset_timestamp;
 		} else {
 			return $current_time - $offset_timestamp;
