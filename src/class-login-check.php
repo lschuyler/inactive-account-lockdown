@@ -47,7 +47,7 @@ class Login_Check {
 		}
 		$valid_user_obj = get_userdata( $valid_user->ID );
 		if ( in_array( 'inactive', $valid_user_obj->roles ) ) {
-			return new \WP_Error( 'inactive_account', __( '<strong>Error</strong>: Your account has been flagged as inactive. Please contact your site administrator.' ) );
+			return new \WP_Error( 'inactive_account', __( '<strong>Error</strong>: Your account has been flagged as inactive. Please contact your site administrator.', 'inactive-account-lockdown' ) );
 		}
 
 		return $user;
