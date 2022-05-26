@@ -39,7 +39,7 @@ class Login_Check {
 			return $user;
 		}
 
-		// if the user is logging in with an email address, get the role, otherwise assume username was entered
+		// If the user is logging in with an email address, get the role, otherwise assume username was entered.
 		if ( strpos( $username, '@' ) ) {
 			$valid_user = \WP_User::get_data_by( 'email', $username );
 		} else {
