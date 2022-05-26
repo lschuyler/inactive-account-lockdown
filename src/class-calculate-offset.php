@@ -58,6 +58,7 @@ class Calculate_Offset implements RightNow {
 	 * @var int $cut_off_days Represents days until marked inactive.
 	 */
 	private const CUT_OFF_DAYS = 90;
+	private const DAYS_IN_SECONDS = 86400; // 24 * 60 * 60
 
 	/**
 	 * Set timestamp cutoff.
@@ -71,8 +72,8 @@ class Calculate_Offset implements RightNow {
 	 */
 	public function get_cutoff_timestamp( bool $future = true ): int {
 		$current_time     = time();
-		$offset_timestamp = self::CUT_OFF_DAYS * 24 * 60 * 60;
-		if ( 'true' === $future ) {
+		$offset_timestamp = self::CUT_OFF_DAYS * self::DAYS_IN_SECONDS;
+		if ( 'true' == $future ) {
 			return $current_time + $offset_timestamp;
 		} else {
 			return $current_time - $offset_timestamp;
