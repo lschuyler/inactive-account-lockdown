@@ -73,7 +73,7 @@ class Calculate_Offset implements RightNow {
 	public function get_cutoff_timestamp( bool $future = true ): int {
 		$current_time     = time();
 		$offset_timestamp = self::CUT_OFF_DAYS * self::DAYS_IN_SECONDS;
-		if ( 'true' == $future ) {
+		if ( 'true' === $future ) {
 			return $current_time + $offset_timestamp;
 		} else {
 			return $current_time - $offset_timestamp;
