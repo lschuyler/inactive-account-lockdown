@@ -29,7 +29,7 @@ class Deactivation {
 	public static function deactivate() {
 
 		// remove the scheduled jobs.
-		wp_clear_scheduled_hook( 'flag_inactive_accounts' );
-		wp_clear_scheduled_hook( 'onetime_90day_mark_inactive' );
+		wp_clear_scheduled_hook( 'InactiveAccount_flag_inactive_accounts' );
+		wp_clear_scheduled_hook( 'InactiveAccount_onetime_90day_mark_inactive' );
 	}
 }

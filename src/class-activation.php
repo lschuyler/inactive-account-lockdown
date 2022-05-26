@@ -32,14 +32,14 @@ class Activation {
 		add_role( 'inactive', 'Inactive User', [] );
 
 		// schedule job to find and flag inactive accounts.
-		if ( ! wp_next_scheduled( 'flag_inactive_accounts' ) ) {
-			wp_schedule_event( time(), 'daily', 'flag_inactive_accounts' );
+		if ( ! wp_next_scheduled( 'InactiveAccount_flag_inactive_accounts' ) ) {
+			wp_schedule_event( time(), 'daily', 'InactiveAccount_flag_inactive_accounts' );
 		}
 
 		$offset = new Calculate_Offset();
 		// schedule a one-time job to flag inactive users who don't log in during the first 90 days.
-		if ( ! wp_next_scheduled( 'onetime_90day_mark_inactive' ) ) {
-			wp_schedule_single_event( $offset->get_cutoff_timestamp(), 'onetime_90day_mark_inactive' );
+		if ( ! wp_next_scheduled( 'InactiveAccount_onetime_90day_mark_inactive' ) ) {
+			wp_schedule_single_event( $offset->get_cutoff_timestamp(), 'InactiveAccount_onetime_90day_mark_inactive' );
 		}
 
 

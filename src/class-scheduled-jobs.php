@@ -24,8 +24,8 @@ class Scheduled_Jobs {
 	 * Create the hooks.
 	 */
 	public function __construct() {
-		add_action( 'flag_inactive_accounts', array( $this, 'query_for_inactive' ) );
-		add_action( 'onetime_90day_mark_inactive', array( $this, 'query_for_bulk_inactive_onetime' ) );
+		add_action( 'InactiveAccount_flag_inactive_accounts', array( $this, 'query_for_inactive' ) );
+		add_action( 'InactiveAccount_onetime_90day_mark_inactive', array( $this, 'query_for_bulk_inactive_onetime' ) );
 	}
 
 	/**
