@@ -34,7 +34,7 @@ interface RightNow {
  * @package InactiveAccount
  * @author  Lisa Schuyler
  *
- * @var right_now
+ * @param int right_now
  */
 class Calculate_Offset implements RightNow {
 	protected int $right_now;
